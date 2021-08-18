@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path')
-app.use(express.static(path.resolve(__dirname, './front-end/build')))
+//app.use(express.static(path.resolve(__dirname, './front-end/build')))
 
 process.on('uncaughtException',err=>{
   console.log('UncaughtException!!! SHUTTING DOWN💥💥💥....')
@@ -39,3 +39,7 @@ process.on('unhandledRejection',err=>{
   });
 });
 
+app.use(express.static(path.join(__dirname, './front-end/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './front-end/build'))
+})
