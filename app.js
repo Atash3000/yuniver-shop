@@ -48,8 +48,8 @@ app.use(hpp({
       'price'
    ]
 }));
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './front-end/build', 'index.html'))
 })
 app.get('/api/config/paypal', (req, res)=>{
    res.send(process.env.PAYPAL_CLIENT_ID || 'sandbox')
