@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path')
-
+app.use(express.static(path.resolve(__dirname, './front-end/build')))
 
 process.on('uncaughtException',err=>{
   console.log('UncaughtException!!! SHUTTING DOWN💥💥💥....')
