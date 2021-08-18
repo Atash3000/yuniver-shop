@@ -8,7 +8,7 @@
     "build": "cd front-end && npm install && npm run build",
     "start:dev": "SET NODE_ENV=development&&nodemon server.js",
     "start:prod": "SET NODE_ENV=production&&nodemon server.js",
-    "start": "SET NODE_ENV=production&&node server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "e-commerce",

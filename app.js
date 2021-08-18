@@ -14,7 +14,11 @@ const orderRouter = require('./routes/orderRouter');
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, './front-end/build')))
+app.use(express.static(path.join(__dirname, './front-end/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './front-end/build'))
+})
+
 
 if(process.env.NODE_ENV=='development'){
 

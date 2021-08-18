@@ -39,7 +39,3 @@ process.on('unhandledRejection',err=>{
   });
 });
 
-app.use(express.static(path.join(__dirname, './front-end/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './front-end/build'))
-})
