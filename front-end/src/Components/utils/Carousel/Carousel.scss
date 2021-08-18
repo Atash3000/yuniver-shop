@@ -1,0 +1,72 @@
+@import '../../../sass/mixins';
+
+.Carousel {
+  position: relative;
+  ///overflow: hidden;
+  max-height: 67rem;
+  height: 67rem;
+  // height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  .slide {
+    //  opacity: 0.9;
+    //transform: scale(1);
+  }
+
+  .slide.active {
+    height: 67rem;
+
+    width: 100%;
+    // opacity: 1;
+    //height: 100%;
+    //margin: auto;
+    opacity: 1;
+    //transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+  }
+
+  &__arrow {
+    &--left {
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: #000;
+      cursor: pointer;
+      text-align: left;
+      user-select: none;
+      padding: 1rem 2rem;
+    }
+
+    &--right {
+      z-index: 10;
+      padding: 1rem 2rem;
+      text-align: right;
+      user-select: none;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background-color: #000;
+    }
+  }
+
+  &--icon {
+    font-size: 3rem;
+    color: #fff;
+    display: inline-block;
+  }
+}
+
+.slide--image {
+  //dobject-fit: cover;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+
+  height: auto;
+}

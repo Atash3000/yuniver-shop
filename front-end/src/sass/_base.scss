@@ -1,0 +1,34 @@
+@import 'mixins';
+
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  text-rendering: optimizeLegibility;
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.7rem;
+  box-sizing: inherit;
+  top: 0 !important;
+
+  @include responsive(phone) {
+    min-width: 320px !important;
+  }
+}
+
+#yuniver {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 50.5%;
+  }
+}

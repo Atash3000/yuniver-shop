@@ -1,0 +1,73 @@
+@import '../../../sass/variables';
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    //width: 100%;
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.02 ease-in-out;
+    position: relative;
+    font-size: $default-font-size;
+
+    // change for the button element
+    border: none;
+    cursor: pointer;
+  }
+
+  &--primary {
+    background-color: $color-black-light;
+    color: $color-white;
+  }
+  &:disabled {
+    opacity: 0.5;
+    background-color: rgba($color-black-light, 0.6);
+  }
+
+  &--dark {
+    background-color: #000;
+    color: $color-white;
+    border-radius: 0;
+    font-size: 1.2rem;
+  }
+
+  &--dark-light {
+    background-color: $color-dark-light;
+    color: $color-white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    border-radius: 0;
+    text-align: center;
+
+    width: 15rem;
+    height: 5rem;
+
+    transition: color 0.2s;
+    &:disabled {
+      background-color: rgba($color-dark-light, 0.8);
+    }
+  }
+
+  &--white {
+    background-color: $color-white-dark;
+    color: $color-black;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    // padding: 1.8rem 2rem;
+    border: 2px solid $color-white-dark;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $color-white-dark;
+      background-color: transparent;
+      border: 2px solid$color-white-dark;
+    }
+  }
+}

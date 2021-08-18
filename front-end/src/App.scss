@@ -1,0 +1,43 @@
+@import './sass/mixins';
+@import './sass/animations';
+@import './sass/variables';
+.App {
+  overflow: hidden;
+
+  // height: 100%;
+  @include responsive(tablet-land) {
+    // overflow-x: hidden !important;
+    //overflow: hidden;
+  }
+
+  &__container {
+    position: relative;
+    //padding: 11.8rem 0 0 0;
+
+    @include responsive(tablet-land) {
+      //padding: 92px 0 0 0;
+    }
+
+    &--open {
+      @include responsive(tablet-land) {
+        -webkit-animation: mobileMenuOpen 1s ease forwards;
+        -moz-animation: mobileMenuOpen 1s ease forwards;
+        -o-animation: mobileMenuOpen 1s ease forwards;
+        animation: mobileMenuOpen 1s ease forwards;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+      }
+    }
+  }
+}
+
+main {
+  background-color: $color-white-dark;
+  //display: block;
+  min-height: 100vh;
+}

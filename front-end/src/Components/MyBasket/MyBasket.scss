@@ -1,0 +1,152 @@
+@import '../../sass/mixins';
+@import '../../sass/variables';
+.Basket {
+  font-weight: 600;
+  &.Emty {
+    padding: 0;
+    min-height: 100vh;
+  }
+  padding: 15rem 0;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    @include responsive(tablet-port) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    // border: 1px solid rgba(8, 8, 8, 0.3);
+    flex: 0 0 60%;
+
+    &--products {
+      // padding: 2rem;
+      & > * {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__right {
+    flex: 0 0 38%;
+    @include responsive(tablet-port) {
+      padding-top: 5rem;
+    }
+  }
+}
+
+//  form checkpout component
+
+.CheckOut__form {
+  box-shadow: 0 0.1rem 0.5rem rgba(8, 8, 8, 0.3);
+  // height: 100%;
+  padding: 1rem;
+
+  border: 1px solid rgba(8, 8, 8, 0.3);
+  .Form__button-box {
+    width: 85%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+}
+
+.Form__top {
+  // height: 10rem;
+  padding: 1rem 0;
+  // border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &--select-box {
+    // border: 2px solid red;
+    width: 85%;
+    display: flex;
+
+    padding: 1.5rem 0;
+    // margin-left: 10%;
+    //padding: 2rem;
+
+    // background-color: rgb(189, 46, 141);
+
+    & > select {
+      flex: 1;
+      font-family: inherit;
+      padding: 1rem 0.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      & > * {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &--zipCode {
+    display: flex;
+    padding: 1.5rem 0;
+    width: 85%;
+    // margin-left: 10%;
+
+    /// overflow: hidden;
+    & > input {
+      flex: 1;
+      width: 100%;
+      padding: 1rem 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: inherit;
+
+      &::placeholder {
+        color: #000;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.Form__bottom {
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+
+  &--info {
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    // background-color: rgb(16, 85, 39);
+  }
+}
+
+// InforAboutProduct components
+
+.InforAboutProduct {
+  text-transform: uppercase;
+
+  & > * {
+    display: flex;
+    font-size: 1.4rem;
+
+    font-weight: 600;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--free {
+    font-weight: 700;
+    color: rgb(11, 212, 11);
+  }
+
+  &--total {
+    font-size: 1.7rem;
+    font-weight: 700;
+  }
+}

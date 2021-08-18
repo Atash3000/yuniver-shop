@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Yuniver online shop backend",
+  "proxy": "http://127.0.0.1:8080/",
+  "main": "app.js",
+  "scripts": {
+    "build": "cd front-end && npm install && npm run build",
+    "start:dev": "SET NODE_ENV=development&&nodemon server.js",
+    "start:prod": "SET NODE_ENV=production&&nodemon server.js",
+    "start": "SET NODE_ENV=production&&node server.js"
+  },
+  "keywords": [
+    "e-commerce",
+    "jeans",
+    "jumpers"
+  ],
+  "author": "Atamurad",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.2",
+    "express-rate-limit": "^5.2.6",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.0",
+    "nodemon": "^2.0.7",
+    "slugify": "^1.5.0",
+    "validator": "^13.5.2",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

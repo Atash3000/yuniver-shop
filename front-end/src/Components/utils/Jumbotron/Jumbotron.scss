@@ -1,0 +1,53 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.Jumbotron {
+  height: 35rem;
+  max-width: 100%;
+  background-image: url('./images/account-min.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(tablet-port) {
+    height: 25rem;
+  }
+  @include responsive(tablet-land) {
+    height: 27rem;
+  }
+
+  &.home {
+    background-image: url('./images/naeim-jafari-svQZUVLOLjM-unsplash.jpg'),
+      url('./images/monica-silva-VlMMBxSZuSI-unsplash.jpg');
+
+    background-position: top left, top right;
+    background-repeat: no-repeat;
+    background-size: 50rem;
+    height: 35rem;
+    @include responsive(table-land) {
+      background-repeat: no-repeat;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    @include responsive(table-port) {
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 4rem;
+    text-transform: uppercase;
+    display: block;
+    line-height: 3.6rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.658);
+    color: $color-black-light;
+  }
+}

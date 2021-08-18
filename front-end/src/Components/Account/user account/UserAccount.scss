@@ -1,0 +1,198 @@
+@import '../../../sass/mixins';
+
+.UserAccount {
+  min-height: 100vh;
+
+  font-size: 2rem;
+
+  &__main {
+    padding: 0 3rem;
+    padding-bottom: 5rem;
+  }
+
+  &__nav {
+    //padding: 1rem 3rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #eee;
+    & h2:first-child {
+      color: #fff;
+      background-color: rgb(59, 55, 55);
+    }
+
+    & h2:last-child {
+      background-color: #fff;
+    }
+    & h2 {
+      cursor: pointer;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__button {
+    //padding: 1rem 3rem;
+    width: 20%;
+  }
+}
+
+.OrderHistory {
+  padding: 5rem 0;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & thead th {
+      padding: 1.6rem 0rem;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: rgb(59, 55, 55);
+    }
+
+    & tbody tr:nth-child(even) {
+      background-color: rgb(230, 227, 227);
+    }
+
+    & td,
+    th {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      padding: 0 1rem;
+    }
+  }
+
+  &__button {
+    padding: 1rem;
+    width: 20%;
+
+    & button {
+      margin: 1rem;
+    }
+  }
+}
+
+.AccountDetails {
+  min-height: 100vh;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+
+  padding-bottom: 5rem;
+
+  min-height: 100vh;
+  &__main {
+    position: relative;
+    //border: 2px solid red;
+    padding: 5rem 3rem;
+
+    & h1 {
+      font-weight: 500;
+      font-size: 1.8rem;
+      display: inline-block;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__nav {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #eee;
+    & h2:last-child {
+      color: #fff;
+      background-color: rgb(59, 55, 55);
+    }
+
+    & h2:first-child {
+      background-color: #fff;
+    }
+    & h2 {
+      cursor: pointer;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__top {
+    padding: 2rem 0;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    & input {
+      font-family: inherit;
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 0.7rem;
+      border: 0;
+
+      &:focus {
+        border: 0;
+        outline: none;
+        background-color: rgb(225, 241, 248);
+      }
+    }
+
+    & label {
+      margin-bottom: 0.4rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    @include responsive(tablet-port) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    // border: 2px solid red;
+    flex: 0 0 45%;
+    & div {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & h3 {
+      text-transform: capitalize;
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding: 1.2rem;
+    }
+  }
+
+  &__right {
+    // border: 2px solid red;
+    flex: 0 0 45%;
+    & div {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & h3 {
+      text-transform: capitalize;
+      font-size: 1.8rem;
+      font-weight: 600;
+      padding: 1.2rem;
+    }
+  }
+
+  &__button {
+    width: 40%;
+  }
+}

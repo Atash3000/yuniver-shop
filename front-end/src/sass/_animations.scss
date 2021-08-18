@@ -1,0 +1,29 @@
+
+  @keyframes mobileMenuOpen{
+    0%{
+    transform: translate(0px,0px);
+    -webkit-transform: translate(0px,0px);
+  }
+  
+    100%{
+      opacity:1;
+      transform:translateX(38.8rem);
+    }
+  }
+
+
+@include responsive(phone){
+  @keyframes mobileMenuOpen{
+    0%{
+    transform: translate(0px,0px);
+    -webkit-transform: translate(0px,0px);
+  }
+  
+    100%{
+      opacity:1;
+      //transform:translateX(38.9rem);
+      -webkit-transform: translate(32.8rem);
+      transform:translateX(32.8rem);
+    }
+  }
+}

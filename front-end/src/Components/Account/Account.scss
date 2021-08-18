@@ -1,0 +1,48 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.My-account {
+  // background-color: rgb(212, 211, 211);
+  //  height: 100vh;
+  //padding-bottom: 50rem;
+  &__main {
+    position: relative;
+    // border: 3px solid black;
+    height: 100%;
+    padding: 10rem 0;
+    display: flex;
+    @include responsive(tablet-port) {
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex: 0 0 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__right {
+    overflow: hidden;
+
+    flex: 0 0 50%;
+  }
+
+  &__status-text {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-40%);
+
+    & h2 {
+      display: block;
+      padding: 0.7rem;
+      font-size: 1.6rem;
+      white-space: nowrap;
+      text-transform: uppercase;
+      background-color: green;
+      color: #fff;
+    }
+  }
+}

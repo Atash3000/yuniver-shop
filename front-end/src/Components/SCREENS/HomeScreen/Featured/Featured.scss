@@ -1,0 +1,123 @@
+@import '../../../../sass/mixins';
+@import '../../../../sass/variables';
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 35rem;
+
+  &__side {
+    height: 35rem;
+    transition: all 1s ease;
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  //front side styling
+  &__picture {
+    height: 100%;
+    background-color: rgb(61, 39, 39);
+    overflow: hidden;
+    & > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  //backc styling
+  &__cta {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  &__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  // @include responsive(tablet-port) {
+  //   height: auto;
+  //   border-radius: 3px;
+  //   background-color: $color-white;
+  //   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  //   &__side {
+  //     height: auto;
+  //     position: relative;
+  //     box-shadow: none;
+
+  //     &--back {
+  //       transform: rotateY(0);
+  //       clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  //     }
+  //   }
+
+  //   &:hover &__side--front {
+  //     transform: rotateY(0);
+  //   }
+  //   .card__details {
+  //     padding: 1rem 3rem;
+  //   }
+
+  //   //backc styling
+  //   &__cta {
+  //     width: 90%;
+  //     position: relative;
+  //     top: 0%;
+  //     left: 0%;
+  //     transform: translate(0);
+  //     width: 100%;
+  //     padding: 7rem 4rem;
+  //   }
+  //   &__price-box {
+  //     margin-bottom: 3rem;
+  //   }
+  //   &__price-value {
+  //     font-size: 4rem;
+  //   }
+  // }
+}

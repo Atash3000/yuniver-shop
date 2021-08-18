@@ -1,0 +1,315 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 11.8rem;
+  background: linear-gradient(to bottom, #25211e 0, rgba(37, 33, 30, 0) 100%);
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  transition: background-color 0.7s ease;
+  // &::before {
+  //   content: 'Free delivery over 50$';
+  //   display: block;
+  //   text-align: center;
+  //   background-color: rgb(0, 0, 0);
+  //   color: rgb(199, 192, 192);
+  //   font-weight: 600;
+  //   font-size: 1.2rem;
+
+  //   height: 2.2rem;
+  //   width: 100vw;
+  //   position: absolute;
+  // }
+
+  &.active {
+    background-color: $color-black;
+  }
+
+  &:hover {
+    // background-color: #1b1b1b;
+    background-color: $color-black;
+  }
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: -4px;
+  //   height: 4px;
+  //   background: rgba(0, 0, 0, 0.1);
+  // }
+  @include responsive(tablet-land) {
+    // text-align: center;
+    min-height: auto;
+    height: 92px !important;
+    overflow: hidden;
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  & > * {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__nav {
+    flex: 1;
+  }
+
+  &__logo {
+    flex: 0 0 30%;
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    line-height: 0;
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// NAVIGATION COMPONENT
+
+.nav {
+  height: 100%;
+  opacity: 1;
+  transition: all 0.4s;
+
+  &:hover &__link {
+    opacity: 0.6;
+  }
+
+  &:hover &__link:hover {
+    opacity: 1;
+  }
+  @include responsive(tablet-land) {
+    display: none;
+  }
+
+  &__menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include responsive(tablet-land) {
+      display: none;
+    }
+  }
+
+  &__items {
+    list-style-type: none;
+    &:not(:first-child) {
+      margin-left: 4rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.075rem;
+    padding: 1.2rem 1rem 1.3rem;
+    transition: all 0.2s;
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// LOGO COMPONENT
+
+.logo {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__name {
+    flex: 1;
+    padding: 2.4rem 0 1rem 0;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    color: $color-white;
+
+    &--main {
+      font-size: 3.4rem;
+      letter-spacing: 1.3rem;
+      font-weight: 400;
+      text-shadow: 0 0.9rem 0.6rem rgba($color-black, 0.2);
+      @include responsive(tablet-port) {
+        font-size: 2.6rem;
+
+        letter-spacing: 0.8rem;
+      }
+    }
+
+    &--sub {
+      font-weight: 500;
+      letter-spacing: 0.4rem;
+      font-size: 1.3rem;
+      text-shadow: 0 0.9rem 0.6rem rgba($color-black, 0.5);
+      @include responsive(tablet-port) {
+        font-size: 1.1rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// Search component
+
+.form {
+  //border: 1px solid red;
+  // flex:0 0 37%;
+  //height:100%;
+  @include responsive(tablet-land) {
+    display: none;
+  }
+
+  &__container {
+    border: 1px solid rgba($color-white, 0.2);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    @include responsive(tablet-land) {
+      display: none;
+    }
+  }
+  &__input {
+    background-color: transparent;
+    padding: 0 1rem;
+    line-height: 3.8rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.075rem;
+    height: 3.8rem;
+    width: 65%;
+
+    font-family: inherit;
+    // border:1px solid rgba($color-white,.2);
+    color: $color-white;
+    border: 0;
+    &:focus {
+      outline: none;
+      border: 0;
+    }
+    &::placeholder {
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 1;
+    }
+    &:focus::placeholder {
+      opacity: 0.6;
+    }
+  }
+  &__button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border: 0;
+    }
+  }
+  &__icon {
+    font-size: 3rem;
+    height: 4.5rem;
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// SHOPPING BASKET
+
+.link-basket {
+  text-decoration: none;
+  font-size: 2.4rem;
+  color: $color-white;
+
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem;
+
+  @include responsive(tablet-port) {
+    font-size: 3.2rem;
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// USER COMPONENT
+
+.user {
+  margin-right: 2rem;
+  @include responsive(tablet-land) {
+    display: none;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+// / / / / / / / / / // / / / / / // / / / / /
+// WISHLIST  LINK
+.wishlist {
+  &__emty {
+    display: none;
+  }
+  &__hasItems {
+    background-color: $color-black-light;
+
+    position: absolute;
+    // text-align: center;
+    top: 1.7rem;
+    z-index: 15;
+
+    padding: 8px 5px;
+
+    //display: inline-block;
+
+    right: 0.3rem;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  &__link {
+    position: relative;
+    padding: 0.5rem;
+    // border: 1px solid red;
+    //position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+  &__icon {
+    transition: transform 0.2s;
+    @include responsive(tablet-portrait) {
+      transform: scale(1.2);
+    }
+  }
+}

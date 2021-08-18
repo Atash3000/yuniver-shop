@@ -1,0 +1,162 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+@import '../../../sass/utils';
+
+.mobile-menu {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: -39rem;
+  display: none;
+  bottom: 0;
+  //height: 150vh;
+  display: none;
+  width: 39rem;
+
+  background-color: $color-black;
+  z-index: 999;
+  &.open {
+    @include responsive(tablet-land) {
+      display: block;
+    }
+  }
+
+  @include responsive(phone) {
+    left: -32.9rem;
+    width: 32.9rem;
+  }
+
+  &--inner {
+    height: auto;
+
+    //border:1px solid white;
+  }
+  input[type='submit'] {
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    padding-top: 2.8rem;
+    border-bottom: 0;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    & li {
+      list-style: none;
+      padding: 14px 0;
+      &:last-child > * {
+        margin-top: 3.5rem;
+        font-size: 1.7rem;
+      }
+      & > * {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        display: inline-block;
+        -webkit-transition: background 0.3s ease, border 0.3s ease,
+          opacity 0.3s ease, color 0.3s ease;
+        transition: background 0.3s ease, border 0.3s ease, opacity 0.3s ease,
+          color 0.3s ease;
+      }
+    }
+  }
+}
+
+//  .action{
+//     padding: 2rem 3rem;
+//      border-top: 2px solid #fff;
+//     border:1px solid white;
+//     width: 60%;
+//     &__link{
+//       color:#fff;
+//       font-size: 2.1rem;
+//       text-transform: uppercase;
+//         font-weight: 600;
+//         display: inline-block;
+//         text-decoration: none;
+//         border:1px solid white;
+//         white-space: nowrap;
+
+//     }
+
+//   }
+
+/////////////////////////////////////////////
+/// Mobile Search BOX
+.search-box {
+  background-color: $color-black-light;
+}
+.search-form {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  &__submit {
+    cursor: pointer;
+    width: 9rem;
+    height: 9rem;
+
+    //background: url(/images/style/blakely/icons/zoom-white@2x.png) no-repeat center center;
+    background-size: 35px 35px;
+    background-color: $color-black-light;
+    border: 0;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    // transform:translate(50%);
+    right: 0;
+
+    font-weight: 100;
+    z-index: 1;
+    padding: 2.1rem;
+    @include responsive(tab-port) {
+      transform: scale(0.8);
+    }
+  }
+
+  &__container {
+    overflow: hidden;
+    flex: 0 0 75%;
+    &--input {
+      color: #fff;
+      width: 100%;
+      font-weight: 500;
+      font-size: 2.1rem;
+      background: none;
+      line-height: 5.5rem;
+      padding: 1.8rem 3rem 1.7rem;
+      outline: none;
+      border: none;
+      &:focus {
+        outline: none;
+        border: none;
+      }
+
+      &::placeholder {
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 2.1rem;
+        font-weight: 500;
+        opacity: 1;
+      }
+      &:focus::placeholder {
+        opacity: 0.6;
+      }
+    }
+  }
+}

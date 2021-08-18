@@ -1,0 +1,40 @@
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+.loader {
+  position: relative;
+  text-indent: -9999em;
+  border-top: 0.5rem solid rgba(14, 13, 13, 0.2);
+  border-right: 0.5rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.5rem solid rgba(255, 254, 254, 0.973);
+  border-left: 0.5rem solid #110f0f;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.5s infinite linear;
+  animation: load8 0.5s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

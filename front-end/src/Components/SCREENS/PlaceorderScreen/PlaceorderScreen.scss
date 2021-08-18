@@ -1,0 +1,148 @@
+@import '../../../sass/mixins';
+
+.PlaceorderScreen {
+  padding-top: 15rem;
+  min-height: 100vh;
+
+  &__main {
+    //background-color: rgba(55, 212, 186, 0.877);
+    display: flex;
+    @include responsive(tablet-land) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+
+    & .ship-address {
+      padding: 1rem;
+      border-bottom: 1px solid black;
+
+      h2 {
+        font-size: 1.8rem;
+        text-transform: capitalize;
+      }
+
+      p {
+        font-size: 1.6rem;
+        padding: 0.5rem 0;
+        font-weight: 500;
+        text-transform: capitalize;
+        & span {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    & .payment-method {
+      text-transform: capitalize;
+      padding: 1rem;
+    }
+  }
+
+  &__right {
+    // background-color: rgba(29, 28, 28, 0.877);
+    flex: 0 0 40%;
+  }
+}
+
+// *----------------------------ITEMS IN CART RIGHT SIDE OF SCREEEN--------!
+
+.ItemsInCart {
+  box-shadow: 0 0.1rem 0.5rem rgba(8, 8, 8, 0.3);
+  color: rgb(17, 17, 17);
+  //margin: auto;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__bottom {
+    // border: 2px solid red;
+    padding: 2.5rem 0;
+    text-transform: capitalize;
+    border-top: 1px solid rgb(182, 179, 179);
+    & h3 {
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      //background-color: red;
+
+      & span {
+        font-weight: 600;
+        font-size: 1.6rem;
+      }
+
+      & span:last-child {
+        text-transform: uppercase;
+      }
+    }
+    & h3:last-child span {
+      font-weight: 700;
+      //margin: 1rem 0;
+
+      font-size: 2rem;
+    }
+  }
+}
+
+.SelectedProducts {
+  font-weight: 400;
+  color: rgb(14, 13, 13);
+  margin: 1.5rem 0;
+
+  &__main {
+    display: flex;
+  }
+
+  &__left {
+    width: 17%;
+
+    & img {
+      border-radius: 7%;
+      width: 100%;
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  &__right {
+    padding: 0 1.5rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    &--top {
+      padding-bottom: 0.3rem;
+      flex: 1;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      & > h2 {
+        text-transform: capitalize;
+        font-size: 1.3rem;
+      }
+    }
+
+    &--bottom {
+      padding-top: 0.3rem;
+      flex: 1;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      & > h2 {
+        text-transform: capitalize;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

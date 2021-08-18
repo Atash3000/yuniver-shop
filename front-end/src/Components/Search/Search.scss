@@ -1,0 +1,8 @@
+.Search {
+  min-height: 100vh;
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,43 @@
+.QtyOptions {
+  padding: 1rem 2rem;
+}
+.qo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__select-box {
+    flex: 0 0 30%;
+  }
+
+  &--select {
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    & > * {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__in-stock {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    &--true {
+      color: rgb(13, 185, 13);
+    }
+    &--false {
+      color: red;
+
+      &-big {
+        white-space: nowrap;
+        color: red;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

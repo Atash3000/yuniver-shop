@@ -1,0 +1,112 @@
+@import '../../../sass/mixins';
+
+.Signup {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 70%;
+
+    margin: 0 auto;
+    @include responsive(phone) {
+      width: 90%;
+    }
+    &--top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include responsive(tablet-port) {
+        flex-direction: column;
+        & div {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    padding: 1rem 0;
+    text-align: center;
+    padding: 1rem 0;
+    &--text {
+      color: black;
+      font-size: 2.1rem;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: capitalize;
+    }
+  }
+
+  &__name {
+    // border: 1px solid rgb(31, 170, 73);
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  &__lastName {
+    // border: 1px solid rgb(31, 170, 73);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+    // border: 1px solid red;
+    width: 45%;
+  }
+
+  &--label {
+    margin-left: 0.4rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &--input {
+    flex: 1;
+    font-family: inherit;
+    font-size: 1.7rem;
+    padding: 1rem;
+    border: none;
+    font-weight: 500;
+    //border: 1px solid black;
+    background-color: #eee;
+    border-bottom: 2px solid transparent;
+    &:focus {
+      background-color: transparent;
+      border-bottom: 2px solid transparent;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #000;
+      font-weight: 700;
+    }
+
+    &:invalid {
+      border-bottom: 2px solid red;
+    }
+  }
+
+  &__password {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__email {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__button-box {
+    padding: 1rem 0;
+    text-align: left;
+  }
+}

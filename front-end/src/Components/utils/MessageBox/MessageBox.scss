@@ -1,0 +1,27 @@
+.alert {
+  font-size: 1.4rem;
+  padding: 0.8rem 0;
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.alert-info {
+  color: blue;
+  background-color: #eee;
+}
+
+.alert-danger {
+  color: #fff;
+  background-color: red;
+}
+
+.danger {
+  color: red;
+}
+
+.alert-success {
+  color: #fff;
+  background-color: rgb(31, 145, 8);
+}

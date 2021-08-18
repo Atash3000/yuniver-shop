@@ -1,0 +1,100 @@
+@import '../../../sass/mixins';
+
+.OrderScreen {
+  padding: 15rem 0;
+  min-height: 100vh;
+  &__pay {
+    position: relative;
+  }
+
+  &__main {
+    display: flex;
+
+    padding: 0 2rem;
+
+    justify-content: space-between;
+    @include responsive(tablet-port) {
+      flex-direction: column;
+      padding: 0;
+
+      align-items: center;
+    }
+  }
+
+  &__left {
+    box-shadow: 0 0.1rem 0.5rem rgba(8, 8, 8, 0.3);
+    padding: 2rem;
+    width: 55%;
+    @include responsive(tablet-port) {
+      width: 90%;
+    }
+  }
+
+  &__right {
+    padding: 2rem;
+    box-shadow: 0 0.1rem 0.5rem rgba(8, 8, 8, 0.3);
+    width: 35%;
+    @include responsive(tablet-port) {
+      width: 90%;
+    }
+  }
+
+  &__shipping {
+    padding: 1rem 0;
+
+    text-transform: capitalize;
+    & p {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    &--top {
+      display: flex;
+      padding: 0.5rem 0;
+    }
+
+    &--bottom {
+      padding: 0.5rem 0;
+      display: flex;
+      & > * {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__payment {
+    padding: 1rem 0;
+
+    text-transform: capitalize;
+  }
+
+  &__deliver {
+    padding: 1rem 0;
+
+    text-transform: capitalize;
+  }
+
+  &__paid {
+    padding: 1rem 0;
+
+    text-transform: capitalize;
+  }
+
+  &__summary {
+    padding: 1.5rem 0;
+    text-transform: capitalize;
+    & h2 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    & h3 {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+    }
+    @include responsive(tablet-port) {
+      padding: 1.5rem 3rem;
+    }
+  }
+}
